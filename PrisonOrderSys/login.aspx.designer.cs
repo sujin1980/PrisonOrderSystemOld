@@ -10,6 +10,6 @@
 namespace PrisonOrderSys {
     
     
-    public partial class _Default {
+    public partial class login {
     }
 }
