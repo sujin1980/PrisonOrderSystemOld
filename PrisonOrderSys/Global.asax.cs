@@ -8,6 +8,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using PrisonOrderSys.CommonUtil;
 
 namespace PrisonOrderSys
 {
@@ -19,7 +20,9 @@ namespace PrisonOrderSys
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);            
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Console.WriteLine("");
+            
         }
     }
 }
