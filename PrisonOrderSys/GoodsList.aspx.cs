@@ -143,7 +143,13 @@ namespace PrisonOrderSys
             }
 
         }*/
+    
+        protected void BtnUp1_Click(object sender, EventArgs e)
+        {
+            string str = "dfasdffffffffffffff";
+            Console.WriteLine("asdfafasf = " + str);
 
+        }
         protected void BtnUp_Click(object sender, EventArgs e)
         {
             if (FileUpload.HasFile)
@@ -164,5 +170,8 @@ namespace PrisonOrderSys
                 LabMsg.Text = "你还没有选择上传文件!";
             }
         }
+
+        
+
     }
 }

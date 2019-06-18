@@ -257,13 +257,6 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\NewFolder1\changelog.txt" />
-    <Content Include="Scripts\NewFolder1\easyloader.js" />
-    <Content Include="Scripts\NewFolder1\jquery.easyui.min.js" />
-    <Content Include="Scripts\NewFolder1\jquery.easyui.mobile.js" />
-    <Content Include="Scripts\NewFolder1\jquery.min.js" />
-    <Content Include="Scripts\NewFolder1\license_freeware.txt" />
-    <Content Include="Scripts\NewFolder1\readme.txt" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
@@ -514,12 +507,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Scripts\NewFolder1\demo-mobile\" />
-    <Folder Include="Scripts\NewFolder1\demo\" />
-    <Folder Include="Scripts\NewFolder1\locale\" />
-    <Folder Include="Scripts\NewFolder1\plugins\" />
-    <Folder Include="Scripts\NewFolder1\src\" />
-    <Folder Include="Scripts\NewFolder1\themes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

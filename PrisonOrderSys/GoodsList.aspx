@@ -9,10 +9,6 @@
 
 <script type="text/javascript">
 
-    $(document).ready(function(){
-
-        $("#myModal").modal({ backdrop: 'static', keyboard: false });
-    });
 
     function cbSelectAll(aDgTableName, index) {
         var e = event.srcElement;
@@ -39,6 +35,10 @@
         };
     }
 
+    function openMotai(){
+       
+        $("#myModal").modal({ backdrop: 'static', keyboard: false });
+    }
 
 </script>
 
@@ -146,6 +146,9 @@
             </div>
 			<div class="modal-footer">
                 <asp:Button ID="Button5" runat="server" Text="保存" OnClick="SaveGoods_Click" Width="80px" />
+                <button type="button" ID="Button7" class="btn btn-primary" onclick="openMotai()" runat="server" onserverclick="BtnUp1_Click">
+                            提交更改
+                  </button>
                 <asp:Button ID="Button6" runat="server" Text="取消" OnClick="CancelSave_Click"  Width="80px" />
 			</div>
 		</div><!-- /.modal-content -->
