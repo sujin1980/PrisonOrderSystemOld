@@ -3,7 +3,6 @@ using PrisonOrderSys.Service;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,18 +10,18 @@ using System.Web.UI.WebControls;
 
 namespace PrisonOrderSys
 {
-    public partial class login : System.Web.UI.Page 
+    public partial class login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
 
-            /*
             if (OrderSysDataAccess.GetInstance().CreateDBConnect() == false)
             {
                 Response.Write("<script language=javascript>alert('数据库连接失败，请稍后刷新重试！');window.location = 'login.aspx';</script>");
             }
 
-            
+            /*
             string connstring2 = "server =.; database = PrisonOrder; integrated security = SSPI";
             //database=test_login 数据库名
             SqlConnection conn = new SqlConnection(connstring2);
@@ -71,36 +70,32 @@ namespace PrisonOrderSys
             */
         }
 
-        /*
-       protected void ResetUserInfo_Click(object sender, EventArgs e)
-       {
+        protected void ResetUserInfo_Click(object sender, EventArgs e)
+        {
+            
+            this.TextBox1.Text = "";
+            this.TextBox2.Text = "";
+        }
 
-           this.TextBox1.Text = "";
-           this.TextBox2.Text = "";
-       }
+        protected void Login_Click(object sender, EventArgs e)
+        {
+            if(UserService.GetInstance().findUserbyNameAndPassword(this.TextBox1.Text.Trim(), this.TextBox2.Text.Trim()))
+            {
+               Server.Transfer("Default.aspx?", true);
+               //Server.Transfer("./Goods/GoodsList.aspx?", true); 地址跳转Debug正确
+            }
+            else
+            {
+                this.TextBox1.Text = "";
+                this.TextBox2.Text = "";
 
-       protected void Login_Click(object sender, EventArgs e)
-       {
-           if(UserService.GetInstance().findUserbyNameAndPassword(this.TextBox1.Text.Trim(), this.TextBox2.Text.Trim()))
-           {
-              Server.Transfer("Default.aspx?", true);
-              //Server.Transfer("./Goods/GoodsList.aspx?", true); 地址跳转Debug正确
-           }
-           else
-           {
-               this.TextBox1.Text = "";
-               this.TextBox2.Text = "";
+                Response.Write("<script language=javascript>alert('输入账号或密码错误！');window.location = 'login.aspx';</script>");
+            }
+        }
 
-               Response.Write("<script language=javascript>alert('输入账号或密码错误！');window.location = 'login.aspx';</script>");
-           }
-       }
+   
 
-       */
-
-
-    
-
-
+       
 
     }
 }
