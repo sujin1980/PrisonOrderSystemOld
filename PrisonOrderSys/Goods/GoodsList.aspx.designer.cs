@@ -112,6 +112,15 @@ namespace PrisonOrderSys {
         protected global::System.Web.UI.WebControls.TextBox GoodsPrice;
         
         /// <summary>
+        /// Label6 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+        
+        /// <summary>
         /// Label4 控件。
         /// </summary>
         /// <remarks>
@@ -139,13 +148,13 @@ namespace PrisonOrderSys {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// GoodsPicture 控件。
+        /// goodsimg 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GoodsPicture;
+        protected global::System.Web.UI.HtmlControls.HtmlImage goodsimg;
         
         /// <summary>
         /// FileUpload 控件。
@@ -175,15 +184,6 @@ namespace PrisonOrderSys {
         protected global::System.Web.UI.WebControls.Label LabMsg;
         
         /// <summary>
-        /// img 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage img;
-        
-        /// <summary>
         /// Label7 控件。
         /// </summary>
         /// <remarks>
@@ -209,15 +209,6 @@ namespace PrisonOrderSys {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button5;
-        
-        /// <summary>
-        /// Button7 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton Button7;
         
         /// <summary>
         /// Button6 控件。

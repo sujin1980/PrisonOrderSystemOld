@@ -99,10 +99,11 @@ namespace PrisonOrderSys
         }
         protected void SaveGoods_Click(object sender, EventArgs e)
         {
-          
+            string str = this.goodsimg.Src.Trim();
+
+            Console.WriteLine("str = " + str);
             GoodsService.GetInstance().createGoods(this.GoodsName.Text.Trim(), this.GoodsPrice.Text.Trim(),
-                this.GoodsNumber.Text.Trim(), this.GoodsPicture.Text.Trim(), this.GoodsRemarks.Text.Trim());
-            
+                this.GoodsNumber.Text.Trim(), this.goodsimg.Src.Trim(), this.GoodsRemarks.Text.Trim());
         }
 
         protected void CancelSave_Click(object sender, EventArgs e)
@@ -110,7 +111,6 @@ namespace PrisonOrderSys
             this.GoodsName.Text   = "";
             this.GoodsPrice.Text  = "";
             this.GoodsNumber.Text = "";
-            this.GoodsPicture.Text = "";
             this.GoodsRemarks.Text = "";
         }
 
@@ -163,7 +163,7 @@ namespace PrisonOrderSys
                 savePath = savePath + "\\" + FileUpload.FileName;
                 FileUpload.SaveAs(savePath);
                 LabMsg.Text = string.Format("<a href='upload/{0}'>upload/{0}</a>", FileUpload.FileName);
-                this.img.Src = "upload/" + FileUpload.FileName;
+                this.goodsimg.Src = "upload/" + FileUpload.FileName;
             }
             else
             {
@@ -171,7 +171,10 @@ namespace PrisonOrderSys
             }
         }
 
-        
+        protected void ProcessRequest(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }

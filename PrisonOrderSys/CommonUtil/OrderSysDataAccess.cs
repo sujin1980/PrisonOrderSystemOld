@@ -98,15 +98,23 @@ namespace PrisonOrderSys.CommonUtil
             {
                 //DataSet离线数据集
                 cmd.CommandText = str;
-                DataSet dataset = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dataset);
-                if(dataset.Tables[0].Rows.Count <= 0)
+                try
                 {
+                    DataSet dataset = new DataSet();
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(dataset);
+                    if(dataset.Tables[0].Rows.Count <= 0)
+                    {
+                        return null;
+                    }
+                    return dataset;
+                }
+                catch (Exception ee)
+                {
+                    Console.WriteLine("执行的SQL语句为：" + str);
+                    Console.WriteLine("执行的异常信息为：" + ee.ToString());
                     return null;
                 }
-
-                return dataset;
 
                 /*DataSet dataset = new DataSet();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

@@ -46,6 +46,12 @@ namespace PrisonOrderSys.Dao
             return OrderSysDataAccess.GetInstance().findDataList(str);
         }
 
+        public DataSet findGoodsById(string goodsId)
+        {
+            string str = "select * from t_goods where id = " + goodsId;
+            return OrderSysDataAccess.GetInstance().findDataList(str);
+        }
+
         public bool deleteGoodsList(string goodsList)
         {
             string deleteStr = "delete from t_goods where id in( " + goodsList + ")";
@@ -57,7 +63,7 @@ namespace PrisonOrderSys.Dao
             string insertStr = "insert into t_goods(name, number, price, picture, remarks) values('" + name + "', "
                 + number + ", "  + price + ", '" + picture + "', '" + remarks + " ')";
 
-
+            Console.WriteLine("sql = " + insertStr);
             return OrderSysDataAccess.GetInstance().executeSqlCmd(insertStr);
         }
     }

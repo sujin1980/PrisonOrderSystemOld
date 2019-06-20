@@ -246,9 +246,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ImageUpload.ashx" />
+    <Content Include="Goods\getGoodsInfo.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Goods\GoodsAdd.aspx" />
-    <Content Include="GoodsList.aspx" />
+    <Content Include="Goods\GoodsList.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -439,6 +440,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Goods\getGoodsInfo.ashx.cs">
+      <DependentUpon>getGoodsInfo.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Goods\GoodsAdd.aspx.cs">
       <DependentUpon>GoodsAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -446,11 +450,11 @@
     <Compile Include="Goods\GoodsAdd.aspx.designer.cs">
       <DependentUpon>GoodsAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GoodsList.aspx.cs">
+    <Compile Include="Goods\GoodsList.aspx.cs">
       <DependentUpon>GoodsList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GoodsList.aspx.designer.cs">
+    <Compile Include="Goods\GoodsList.aspx.designer.cs">
       <DependentUpon>GoodsList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ImageUpload.ashx.cs">
