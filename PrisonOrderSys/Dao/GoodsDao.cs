@@ -69,9 +69,12 @@ namespace PrisonOrderSys.Dao
 
         public bool modifyGoods(int id, string name, string number, string price, string picture, string remarks)
         {
-            string updateStr = "update  t_goods set name = '" + name + "', " +
+            /*string updateStr = "update  t_goods set name = '" + name + "', " +
                 "number = " + number + ", price = " + price + ", picture = '" +
-                picture + "', remarks = '" + remarks + "' where id = " + id;
+                picture + "', remarks = '" + remarks + "' where id = " + id;*/
+
+            string updateStr = "update  t_goods set name = '" + name + "', " +
+               "number = " + number + ", price = " + price + ", remarks = '" + remarks + "' where id = " + id;
 
             Console.WriteLine("sql = " + updateStr);
             return OrderSysDataAccess.GetInstance().executeSqlCmd(updateStr);
