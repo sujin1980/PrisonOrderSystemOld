@@ -249,8 +249,9 @@
     <Content Include="Goods\getGoodsInfo.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Goods\GoodsAdd.aspx" />
-    <Content Include="GoodsList.aspx" />
+    <Content Include="Goods\GoodsList.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="Organization\OrganizationList.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -429,6 +430,7 @@
     </Compile>
     <Compile Include="Dao\OrderInfoDao.cs" />
     <Compile Include="Dao\GoodsDao.cs" />
+    <Compile Include="Dao\PrisonDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -450,11 +452,11 @@
     <Compile Include="Goods\GoodsAdd.aspx.designer.cs">
       <DependentUpon>GoodsAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GoodsList.aspx.cs">
+    <Compile Include="Goods\GoodsList.aspx.cs">
       <DependentUpon>GoodsList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GoodsList.aspx.designer.cs">
+    <Compile Include="Goods\GoodsList.aspx.designer.cs">
       <DependentUpon>GoodsList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ImageUpload.ashx.cs">
@@ -481,9 +483,17 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RoleFunction.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Organization\OrganizationList.aspx.cs">
+      <DependentUpon>OrganizationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Organization\OrganizationList.aspx.designer.cs">
+      <DependentUpon>OrganizationList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\GoodsService.cs" />
     <Compile Include="Service\OrderInfo.cs" />
+    <Compile Include="Service\PrisonService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -511,6 +521,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="User\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

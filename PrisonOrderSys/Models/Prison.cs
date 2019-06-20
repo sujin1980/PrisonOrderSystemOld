@@ -10,6 +10,7 @@ namespace PrisonOrderSys.Models
         private int id;
         private string name;
         private string remarks;
+        private List<Department> departmentList;
 
         public int Id
         {
@@ -47,6 +48,19 @@ namespace PrisonOrderSys.Models
             set
             {
                 remarks = value;
+            }
+        }
+
+        public List<Department> DepartmentList
+        {
+            get
+            {
+                return departmentList;
+            }
+
+            set
+            {
+                departmentList = value;
             }
         }
     }
