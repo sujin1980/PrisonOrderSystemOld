@@ -12,8 +12,8 @@
 
     $(function () {
         $('#myModal').on('show.bs.modal', function (event) {
-            var modal = $(this);  //get modal itself
-            modal.find('.modal-body #MainContent_GoodsName').text('your message');
+            //var modal = $(this);  //get modal itself
+           // modal.find('.modal-body #MainContent_GoodsName').text('your message');
         });
     });
 
@@ -108,24 +108,31 @@
     }
 
     function queryGoods(goodsId, name, number, price, picture, remarks) {
-        alert(name);
-
-        $("#MainContent_GoodsName").val = name;
         $("#myModal").modal('show');
-        $("#MainContent_GoodsName").val = name;
-        $("#" + idPre + "GoodsPrice").val = price;
-        $("#" + idPre + "GoodsNumber").va = number;
-        //$("#" + idPre + "goodsimg").src     = picture;
-        $("#" + idPre + "GoodsRemarks").val = remarks;
+        $("#" + idPre + "GoodsName").attr("value", name);
+        $("#" + idPre + "GoodsPrice").attr("value", price);
+        $("#" + idPre + "GoodsNumber").attr("value", number);
+
+        $("#" + idPre + "goodsimg").attr("src", picture);
+        $("#" + idPre + "GoodsRemarks").attr("value", remarks);
         return true;
     }
 
     function editGoods(goodsId, name, number, price, picture, remarks) {
-        $("#" + idPre + "GoodsName").val = name;
-        $("#" + idPre + "GoodsPrice").val = price;
-        $("#" + idPre + "GoodsNumber").va = number;
-        $("#" + idPre + "goodsimg").src = picture;
-        $("#" + idPre + "GoodsRemarks").val = remarks;
+        $("#myModal").modal('show');
+        $("#" + idPre + "GoodsId").attr("value", goodsId);
+        $("#" + idPre + "GoodsName").attr("value", name);
+        $("#" + idPre + "GoodsPrice").attr("value", price);
+        $("#" + idPre + "GoodsNumber").attr("value", number);
+
+        $("#" + idPre + "goodsimg").attr("src", picture);
+        $("#" + idPre + "GoodsRemarks").attr("value", remarks);
+        return true;
+    }
+
+    function addGoods() {
+        $("#myModal").modal('show');
+        $("#" + idPre + "GoodsId").attr("value", -1);
         return true;
     }
 </script>
@@ -145,7 +152,7 @@
 
        
         <div  class="ordersys-op" style="padding-top: 20px">
-            <asp:Button ID="Button2" runat="server"  Text="新建" data-toggle="modal" data-target="#myModal" Width="80px" />&nbsp;&nbsp;
+            <asp:Button ID="Button2" runat="server"  Text="新建" OnClientClick="return addGoods();" data-toggle="modal" data-target="#myModal" Width="80px" />&nbsp;&nbsp;
             <asp:Button ID="Button3" runat="server" Text="删除"  Width="80px" OnClick="Goods_Delete"/>&nbsp;&nbsp;
             <asp:Button ID="Button4" runat="server" Text="刷新"  Width="80px" OnClientClick="window.location.reload();"/>
         </div>
@@ -190,7 +197,7 @@
                         <ItemTemplate>
                             <asp:HyperLink ID="HyperLink1" runat="server" Text='查看'
                                 onClick='<%# "return queryGoods(" + Eval("id") + ", \"" + Eval("name") + "\"," + Eval("number") + ", " + Eval("price") + ", \"" + Eval("picture") + "\" , \"" + Eval("remarks") + "\")" %>'   > </asp:HyperLink>
-                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl='<%# "return editGoods(" + Eval("id") + "," + Eval("name") + "," + Eval("number") + "," + Eval("price") + "," + Eval("picture") + "," + Eval("remarks") + ")" %>' Text='修改'> </asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink2" runat="server" Text='修改' onClick='<%# "return editGoods(" + Eval("id") + ", \"" + Eval("name") + "\"," + Eval("number") + ", " + Eval("price") + ", \"" + Eval("picture") + "\" , \"" + Eval("remarks") + "\")" %>'> </asp:HyperLink>
                         </ItemTemplate>
                         <HeaderStyle Width="10%" />
                     </asp:TemplateField>
@@ -215,6 +222,11 @@
 			</div>
 
             <div class="container">
+
+                <div  class="ordersys-op" style="padding-top: 20px">
+                    <asp:TextBox ID="GoodsId" runat="server" Height="0" Width="0"></asp:TextBox>
+                </div>
+
 			    <div  class="ordersys-op" style="padding-top: 20px">
                     <asp:Label ID="Label2" runat="server" Text="名称"></asp:Label>&nbsp;<asp:TextBox ID="GoodsName" runat="server"></asp:TextBox>
                 </div>
@@ -246,5 +258,7 @@
 	</div><!-- /.modal -->
 
 </div>
-        
+       
+  
+     
 </asp:Content>

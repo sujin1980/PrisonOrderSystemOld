@@ -66,5 +66,15 @@ namespace PrisonOrderSys.Dao
             Console.WriteLine("sql = " + insertStr);
             return OrderSysDataAccess.GetInstance().executeSqlCmd(insertStr);
         }
+
+        public bool modifyGoods(int id, string name, string number, string price, string picture, string remarks)
+        {
+            string updateStr = "update  t_goods set name = '" + name + "', " +
+                "number = " + number + ", price = " + price + ", picture = '" +
+                picture + "', remarks = '" + remarks + "' where id = " + id;
+
+            Console.WriteLine("sql = " + updateStr);
+            return OrderSysDataAccess.GetInstance().executeSqlCmd(updateStr);
+        }
     }
 }

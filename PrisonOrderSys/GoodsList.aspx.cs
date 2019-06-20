@@ -20,11 +20,6 @@ namespace PrisonOrderSys
                 return;
             }
 
-           // Form.Enctype = "multipart/form-data";
-            Form.Action = "";
-           // Form.Action = ResolveUrl("ImageUpload.ashx");
-
-
             if (OrderSysDataAccess.GetInstance().CreateDBConnect() == false)
             {
                 Response.Write("<script language=javascript>alert('数据库连接失败，请稍后刷新重试！');window.location = 'Default.aspx';</script>");
@@ -100,10 +95,34 @@ namespace PrisonOrderSys
         protected void SaveGoods_Click(object sender, EventArgs e)
         {
             string str = this.goodsimg.Src.Trim();
+            int goodsId = -1;
 
-            Console.WriteLine("str = " + str);
-            GoodsService.GetInstance().createGoods(this.GoodsName.Text.Trim(), this.GoodsPrice.Text.Trim(),
-                this.GoodsNumber.Text.Trim(), this.goodsimg.Src.Trim(), this.GoodsRemarks.Text.Trim());
+
+            string goodsIdStr = this.GoodsId.Text.Trim();
+            try
+            {
+                goodsId = Convert.ToInt32(goodsIdStr);
+            }
+            catch(Exception ee)
+            {
+                Console.WriteLine(ee.ToString());
+                GoodsService.GetInstance().createGoods(this.GoodsName.Text.Trim(), this.GoodsPrice.Text.Trim(),
+                    this.GoodsNumber.Text.Trim(), this.goodsimg.Src.Trim(), this.GoodsRemarks.Text.Trim());
+                return;
+            }
+
+            if(goodsId < 0)
+            {
+                GoodsService.GetInstance().createGoods(this.GoodsName.Text.Trim(), this.GoodsPrice.Text.Trim(),
+                    this.GoodsNumber.Text.Trim(), this.goodsimg.Src.Trim(), this.GoodsRemarks.Text.Trim());
+            }
+            else
+            {
+                Console.WriteLine(this.goodsimg.Src);
+                GoodsService.GetInstance().modifyGoods(goodsId, this.GoodsName.Text.Trim(), this.GoodsPrice.Text.Trim(),
+                    this.GoodsNumber.Text.Trim(), this.goodsimg.Src.Trim(), this.GoodsRemarks.Text.Trim());
+            }
+           
         }
 
         protected void CancelSave_Click(object sender, EventArgs e)
@@ -144,12 +163,6 @@ namespace PrisonOrderSys
 
         }*/
     
-        protected void BtnUp1_Click(object sender, EventArgs e)
-        {
-            string str = "dfasdffffffffffffff";
-            Console.WriteLine("asdfafasf = " + str);
-
-        }
         protected void BtnUp_Click(object sender, EventArgs e)
         {
             if (FileUpload.HasFile)

@@ -56,6 +56,12 @@ namespace PrisonOrderSys.Service
             return GoodsDao.GetInstance().createGoods(name, number, price, picture, remarks) ;
         }
 
+        public bool modifyGoods(int id, string name, string number, string price, string picture, string remarks)
+        {
+
+            return GoodsDao.GetInstance().modifyGoods(id, name, number, price, picture, remarks);
+        }
+
         public DataSet findGoodsById(string goodsId)
         {
             return GoodsDao.GetInstance().findGoodsById(goodsId);

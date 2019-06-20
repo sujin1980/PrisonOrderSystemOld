@@ -67,7 +67,6 @@
     }; 
 
     function checkInput() {
-        alert("检查输入！");
         if ($("#TextBox1").val().trim().length == 0) {
             alert("请输入用户名称！");
             console.log("请输入用户名称！");
@@ -80,7 +79,6 @@
             return false;
         }
 
-        alert("输入信息正确");
         return true;
 
     }
