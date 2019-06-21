@@ -13,6 +13,8 @@ namespace PrisonOrderSys
 {
     public partial class GoodsList : System.Web.UI.Page
     {
+       
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.IsPostBack)
@@ -80,7 +82,6 @@ namespace PrisonOrderSys
 
         }
 
-
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView1.PageIndex = e.NewPageIndex;
@@ -92,6 +93,7 @@ namespace PrisonOrderSys
                 GridView1.DataBind();
             }
         }
+
         protected void SaveGoods_Click(object sender, EventArgs e)
         {
             string str = this.goodsimg.Src.Trim();

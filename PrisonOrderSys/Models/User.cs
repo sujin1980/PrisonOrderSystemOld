@@ -11,7 +11,7 @@ namespace PrisonOrderSys.Models
         private Role role;
         private string name;
         private string password;
-        private int sex;
+        private string sex;
         private Department department;
         private string telephone;
         private string email;
@@ -69,18 +69,7 @@ namespace PrisonOrderSys.Models
             }
         }
 
-        public int Sex
-        {
-            get
-            {
-                return sex;
-            }
-
-            set
-            {
-                sex = value;
-            }
-        }
+        
 
         public Department Department
         {
@@ -131,6 +120,19 @@ namespace PrisonOrderSys.Models
             set
             {
                 remarks = value;
+            }
+        }
+
+        public string Sex
+        {
+            get
+            {
+                return sex;
+            }
+
+            set
+            {
+                sex = value;
             }
         }
     }
